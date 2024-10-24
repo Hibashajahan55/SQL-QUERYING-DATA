@@ -7,15 +7,15 @@ This project demonstrates SQL queries on two tables: Country and Persons. The da
 * Id: INT (Primary Key) – Unique identifier for each country.
 * Country_name: VARCHAR(100) – Name of the country.
 * Population: BIGINT – Population of the country.
-* Area: INT – Area of the country in square kilometers.
+* Area: INT – Area 
 #### Persons Table Structure
 * Id: INT (Primary Key) – Unique identifier for each person.
-* Fname: VARCHAR(255) – First name of the person.
-* Lname: VARCHAR(255) – Last name of the person.
+* Fname: VARCHAR(100) – First name of the person.
+* Lname: VARCHAR(100) – Last name of the person.
 * Population: BIGINT – Population of the person’s country.
-* Rating: DECIMAL(3, 2) – Rating of the person (e.g., 4.5).
+* Rating: DECIMAL – Rating of the person .
 * Country_Id: INT (Foreign Key) – References the Id field in the Country table.
-* Country_name: VARCHAR(255) – Name of the person’s country.
+* Country_name: VARCHAR(100) – Name of  person’s country.
 
 ## TASKS
 1. List the distinct country names from the Persons table
