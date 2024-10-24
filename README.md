@@ -31,6 +31,7 @@ This project demonstrates SQL queries on two tables: Country and Persons. The da
 ## QUERIES
 
 ### Create Country table
+```sql
 CREATE TABLE Country (
     Id INT PRIMARY KEY,
     Country_name VARCHAR(100),
@@ -38,8 +39,9 @@ CREATE TABLE Country (
     Area INT
 );
 
-
+```
 ### Create Persons table
+```sql
 CREATE TABLE Persons (
     Id INT PRIMARY KEY,
     Fname VARCHAR(100),
@@ -51,8 +53,9 @@ CREATE TABLE Persons (
     FOREIGN KEY (Country_Id) REFERENCES Country(Id)
 );
 
-
+```
 ### Insert data into Country table
+```sql
 INSERT INTO Country (Id, Country_name, Population, Area)
 VALUES 
 (1, 'USA', 75000000, 9833520),
@@ -66,9 +69,10 @@ VALUES
 (9, 'Russia', 15500000, 17098242),
 (10, 'Japan', 8650000, 377930);
 
-
+```
 
 ### Insert data into Persons table
+```sql
 INSERT INTO Persons (Id, Fname, Lname, Population, Rating, Country_Id, Country_name)
 VALUES
 (1, 'Jeeva', 'Joseph', 75000000, 4.5, 1, 'USA'),
@@ -81,40 +85,53 @@ VALUES
 (8, 'Suzzy', 'Martin', 6000000, 4.0, 8, 'Brazil'),
 (9, 'Robert', 'Williams', 15500000, 1.7, 9, 'Russia'),
 (10, 'Jane', 'Taylor', 8650000, 4.6, 10, 'Japan');
-select * from persons;
 
+```
 ###  (1)List the distinct country names from the Persons table
+```sql
 SELECT DISTINCT Country_name FROM Persons;
-
+```
 ###  (2)Select first names and last names from the Persons table with aliases.
+```sql
 SELECT Fname AS First_Name, Lname AS Last_Name FROM Persons;
-
+```
 ### (3)Find all persons with a rating greater than 4.0. 
+```sql
 SELECT * FROM Persons WHERE Rating > 4.0 ;
-
+```
 ### (4)Find countries with a population greater than 10 lakhs. 
+```sql
 SELECT * FROM country WHERE Population > 1000000 ;
-
+```
 ### (5)Find persons who are from 'USA' or have a rating greater than 4.5.
+```sql
 SELECT * FROM Persons 
 WHERE Country_name = 'USA' OR Rating > 4.5;
-
+```
 ###  (6)Find all persons where the country name is NULL.
+```sql
 SELECT * FROM Persons 
 WHERE Country_name IS NULL;
-
+```
 ###  (7)Find all persons from the countries 'USA', 'Canada', and 'UK'.
+```sql
 SELECT * FROM Persons 
 WHERE Country_name IN ('USA', 'Canada', 'UK');
-
+```
 ###  (8)Find all persons not from the countries 'India' and 'Australia'. 
+```sql
 SELECT * FROM Persons 
 WHERE Country_name NOT IN ('India', 'Australia');
-
+```
 ### (9)Find all countries with a population between 5 lakh and 2 lakhs
+```sql
 SELECT * FROM Country 
 WHERE Population BETWEEN 500000 AND 2000000;
-
+```
 ### (10)Find all countries whose names do not start with 'C'.
+```sql
 SELECT * FROM Country 
 WHERE Country_name NOT LIKE 'C%';
+```
+## CONCLUSION
+This project demonstrates how to create and query tables in a relational database using SQL. We covered a variety of SQL queries that retrieve, filter, and manipulate data from the Country and Persons tables. The project illustrates how simple SQL commands can provide powerful data analysis capabilities for different use cases. By running these queries, users can gain hands-on experience in SQL and understand how to interact with relational databases effectively.
